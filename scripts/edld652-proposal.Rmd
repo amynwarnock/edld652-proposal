@@ -1,0 +1,63 @@
+---
+title: "EDLD 652 Project Proposal"
+author: "Ksenia Gordeeva, Rebecca Gordon, Amy Warnock"
+date: "1/19/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(edld652)
+library(tidyverse)
+library(here)
+library(ggridges)
+```
+
+```{r list-datasets}
+list_datasets()
+```
+
+```{r download-test}
+acgd <- get_data("EDFacts_acgr_lea_2011_2019")
+math_lea_1019 <- get_data("EDFacts_math_achievement_lea_2010_2019")
+```
+
+```{r download-all-documentation}
+# get_documentation("EDFacts_acgr_lea_2011_2019")
+# get_documentation("EDFacts_acgr_sch_2011_2019")
+# get_documentation("EDFacts_math_achievement_lea_2010_2019")
+# get_documentation("EDFacts_math_achievement_sch_2010_2019")
+# get_documentation("EDFacts_math_participation_lea_2013_2019")
+# get_documentation("EDFacts_math_participation_sch_2013_2019")
+# get_documentation("EDFacts_rla_achievement_lea_2010_2019")
+# get_documentation("EDFacts_rla_achievement_sch_2010_2019")
+# get_documentation("EDFacts_rla_participation_lea_2013_2019")
+# get_documentation("EDFacts_rla_participation_sch_2013_2019")
+# get_documentation("NCES_CCD_fiscal_district_2010")
+# get_documentation("NCES_CCD_fiscal_district_2011")
+# get_documentation("NCES_CCD_fiscal_district_2012")
+# get_documentation("NCES_CCD_fiscal_district_2013")
+# get_documentation("NCES_CCD_fiscal_district_2014")
+# get_documentation("NCES_CCD_fiscal_district_2015")
+# get_documentation("NCES_CCD_fiscal_district_2016")
+# get_documentation("NCES_CCD_fiscal_district_2017")
+# get_documentation("NCES_CCD_fiscal_district_2018")
+# get_documentation("NCES_CCD_nonfiscal_district_2017_2021_directory")
+# get_documentation("NCES_CCD_nonfiscal_district_2017_2021_disabilities")
+# get_documentation("NCES_CCD_nonfiscal_district_2017_2021_english_learners")
+# get_documentation("NCES_CCD_nonfiscal_district_2017_2021_membership")
+# get_documentation("NCES_CCD_nonfiscal_district_2017_2021_staff")
+# get_documentation("NCES_CCD_nonfiscal_school_2017_2020_lunch_program")
+# get_documentation("NCES_CCD_nonfiscal_school_2017_2020_school_characteristics")
+# get_documentation("NCES_CCD_nonfiscal_school_2017_2020_staff")
+# get_documentation("NCES_CCD_nonfiscal_school_2017_2021_directory")
+# get_documentation("NCES_CCD_nonfiscal_school_2017_membership")
+# get_documentation("NCES_CCD_nonfiscal_school_2018_membership")
+# get_documentation("NCES_CCD_nonfiscal_school_2019_membership")
+# get_documentation("NCES_CCD_nonfiscal_school_2020_membership")
+# get_documentation("NCES_CCD_nonfiscal_state_2017_2020_directory")
+# get_documentation("NCES_CCD_nonfiscal_state_2017_2020_staff")
+# get_documentation("NCES_CCD_nonfiscal_state_2017_2021_membership")
+```
+
