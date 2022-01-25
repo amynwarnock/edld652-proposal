@@ -11,7 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(edld652)
 library(tidyverse)
 library(here)
-library(ggridges)
+library(janitor)
+library(skimr)
+
 ```
 
 ```{r list-datasets}
@@ -60,4 +62,20 @@ math_lea_1019 <- get_data("EDFacts_math_achievement_lea_2010_2019")
 # get_documentation("NCES_CCD_nonfiscal_state_2017_2020_staff")
 # get_documentation("NCES_CCD_nonfiscal_state_2017_2021_membership")
 ```
+```{r rebecca-datawrangling}
+mathlea <- get_data("EDFacts_math_achievement_lea_2010_2019")
+
+rlalea <- get_data("EDFacts_rla_achievement_lea_2010_2019")
+
+skim(mathlea)
+skim(rlalea)
+
+mathlea %>% tabyl(ECD_MTHHSPCTPROF)
+mathlea %>% tabyl(LEP_MTHHSPCTPROF)
+mathlea %>% tabyl(HOM_MTHHSPCTPROF)
+mathlea %>% tabyl(MIG_MTHHSPCTPROF)
+mathlea %>% tabyl(CWD_MTHHSPCTPROF)
+
+```
+
 
