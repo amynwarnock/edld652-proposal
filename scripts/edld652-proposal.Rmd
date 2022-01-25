@@ -136,4 +136,56 @@ fiscal_lea_10 %>%
             max_taxperstu = max(taxperstu)) 
 
 ```
+```{r ksenia-dataxploration}
+fiscal2010 <- get_data("NCES_CCD_fiscal_district_2010")
+colnames(fiscal2010)
+skim(fiscal2010)
 
+# Total spendings by state
+total <-fiscal2010 %>% 
+  group_by(STNAME) %>%
+  summarise(TOTALEXP = sum(TOTALEXP))
+
+total  %>%
+  ggplot(aes(TOTALEXP, STNAME)) +
+  geom_col()
+
+#in descending order
+total  %>%
+  ggplot(aes(TOTALEXP, fct_reorder(STNAME, TOTALEXP))) +
+  geom_col() 
+
+#spending on instruction by state 
+instruction <- fiscal2010 %>%
+  group_by(STNAME) %>%
+      summarise(E13 = sum(E13))
+
+instruction  %>%
+  ggplot(aes(E13, STNAME)) +
+  geom_col()
+
+instruction  %>%
+  ggplot(aes(E13, fct_reorder(STNAME, E13))) +
+  geom_col()
+#New York spends more on instruction, while CA spends the most total
+
+#spending on textbooks by state 
+textbooks <- fiscal2010 %>%
+  group_by(STNAME) %>%
+      summarise(V93 = sum(V93))
+
+textbooks  %>%
+  ggplot(aes(V93, fct_reorder(STNAME, V93))) +
+  geom_col()
+
+#spending on Special Ed teachers
+SpEd <- fiscal2010 %>%
+  group_by(STNAME) %>%
+      summarise(Z36 = sum(Z36))
+
+SpEd  %>%
+  ggplot(aes(Z36, fct_reorder(STNAME, Z36))) +
+  geom_col()
+
+#next step - figure out how to show those spendings per state as a proportion of the total spending if that state
+```
